@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track My Order - Global SAM Auto</title>
+    <meta name="description" content="Check available consignment updates for your Global SAM Auto engine or transmission order.">
+    <link rel="canonical" href="/track-order" />
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/view/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/view/css/animate.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/view/css/style8e0e.css?v=9" />
+    <link rel="stylesheet" href="assets/view/css/responsive.css" />
+    <link rel="stylesheet" href="assets/view/css/track-widget.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        .pmc { background: #171a1d; }
+        .sec { background: #252a2e; }
+        .tracking-page-banner {
+            background: #252a2e;
+            padding: 60px 0 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+        .tracking-page-banner h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .tracking-page-banner p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .tracking-widget-section {
+            padding: 50px 0 80px;
+            background: #f8fafc;
+            min-height: 500px;
+        }
+    </style>
+    <script>
+        function openNav() {
+            var el = document.getElementById("navbarSupportedContent");
+            var image = document.getElementById('bar-icon');
+            if (el.style.left === "0px") {
+                el.style.left = "-300px";
+                image.src = "assets/view/images/bar-icon.svg";
+            } else {
+                el.style.left = "0px";
+                image.src = "assets/view/images/close.svg";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header id="header" class="sticky">
+        <div class="head-div pmc">
+            <div class="header-container container">
+                <nav class="navbar navbar-expand-lg p-0" style="position: initial;">
+                    <a class="navbar-brand deskto-logo logo" href="/"><img src="globalsam-logo-light.jpg" alt="Global SAM Auto logo" /></a>
+                    <span style="font-size:30px;cursor:pointer" class="toggel-btn-menu" onclick="openNav()">
+                        <img src="assets/view/images/bar-icon.svg" width="25px" id="bar-icon" alt="menu icons" />
+                    </span>
+                    <div class="navbar-collapse sidenav" id="navbarSupportedContent">
+                        <ul class="navbar-nav justify-content-end w-100 align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about-us">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/shipping-policy">Shipping Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/warranty-policy">Warranty Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/return-policy">Refund & Return Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact-us">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link track-order-link active" href="/track-order" style="color:#e1b56f !important;">
+                                    <i class="fa fa-truck"></i> Track My Order
+                                </a>
+                            </li>
+                            <li class="nav-item contact-number-nav">
+                                <div class="tollfree-new">
+                                    <img src="assets/view/images/call-icon.png" alt="call-icon" width="25px" />
+                                    <div>
+                                        <h6>Contact Number</h6>
+                                        <h6><a href="tel:+18339977866">+1 (833) 997 7866</a></h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="mainbody">
+        <section class="tracking-page-banner">
+            <div class="container">
+                <h1>Track Your Consignment</h1>
+                <p>Check available consignment updates for an engine or transmission order. Sample tracking records are demonstrations, not live inventory or carrier updates.</p>
+            </div>
+        </section>
+
+        <section class="tracking-widget-section">
+            <div class="container">
+                <!-- PartTrack Enterprise Consignment Tracking Widget -->
+                <div class="pt-widget" id="pt-widget">
+                    <div class="pt-header">
+                        <div class="pt-brand-row">
+                            <img src="GlobalSamLog.png" alt="Global SAM Auto" class="pt-header-logo" />
+                            <div class="pt-brand-text">
+                                <h4>Consignment Tracking</h4>
+                                <p class="pt-desc">Enter the consignment number provided with your order. Demo lookups below use sample records.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-form">
+                        <input type="text" id="pt-input" class="pt-input" placeholder="Enter tracking number (e.g. 241190101721)" />
+                        <button id="pt-btn" class="pt-btn" type="button">Track Consignment</button>
+                    </div>
+
+                    <div class="pt-quick-hint">
+                        <span>Sample demo lookups:</span>
+                        <button type="button" class="pt-quick-btn" onclick="document.getElementById('pt-input').value='241190101721'; trackConsignment('241190101721')">241190101721 (In Transit)</button>
+                        <button type="button" class="pt-quick-btn" onclick="document.getElementById('pt-input').value='856256215256'; trackConsignment('856256215256')">856256215256 (Delayed)</button>
+                        <button type="button" class="pt-quick-btn" onclick="document.getElementById('pt-input').value='100000000002'; trackConsignment('100000000002')">100000000002 (Delivered)</button>
+                    </div>
+                    
+                    <div id="pt-result"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container container-extra-custom">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="mb-2"><img src="globalsam-logo-light.jpg" alt="Global SAM Auto logo" width="200" /></div>
+                    <div class="follow-div desktop-follow mt-4">
+                        <a href="#" target="_blank"><img src="assets/view/images/facebook.svg" alt="facebook" style="width:9px;" /></a>
+                        <a href="#" target="_blank"><img src="assets/view/images/tweeter.svg" alt="twitter" /></a>
+                        <a href="#" target="_blank"><img src="assets/view/images/instagram.svg" alt="instagram" /></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="accordian">
+                        <div class="accordian_title">Links</div>
+                        <div class="accordian_content">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/about-us">About us</a></li>
+                                <li><a href="/contact-us">Contact us</a></li>
+                                <li><a href="/track-order">Track My Order</a></li>
+                                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="accordian">
+                        <div class="accordian_title">Other Links</div>
+                        <div class="accordian_content">
+                            <ul>
+                                <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+                                <li><a href="/shipping-policy">Shipping Policy</a></li>
+                                <li><a href="/warranty-policy">Warranty Policy</a></li>
+                                <li><a href="/return-policy">Refund & Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-3">
+                    <div class="accordian">
+                        <div class="accordian_title">Contact Us</div>
+                        <div class="accordian_content">
+                            <ul class="contsct-ul">
+                                <li><img src="assets/view/images/call.svg" alt="call" /> <span><a href="tel:+1307200080" style="color:#fff">+1307200080</a></span></li>
+                                <li><img src="assets/view/images/email.svg" alt="email" /> <span>info@globalsamautos.com</span></li>
+                                <li><img src="assets/view/images/location.svg" alt="location" /> <span>1309 Coffeen Avenue STE 20455 Sheridan Wyoming 82801</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container container-extra-custom">
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <p>Global SAM Solutions LLC © 2026. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <p class="text-right">"Shipping within United States"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/view/js/track-widget.js"></script>
+</body>
+</html>

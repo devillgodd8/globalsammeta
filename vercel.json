@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/about-us.html", "destination": "/about-us", "statusCode": 301 },
+    { "source": "/contact-us.html", "destination": "/contact-us", "statusCode": 301 },
+    { "source": "/privacy-policy.html", "destination": "/privacy-policy", "statusCode": 301 },
+    { "source": "/return-policy.html", "destination": "/return-policy", "statusCode": 301 },
+    { "source": "/shipping-policy.html", "destination": "/shipping-policy", "statusCode": 301 },
+    { "source": "/terms-and-conditions.html", "destination": "/terms-and-conditions", "statusCode": 301 },
+    { "source": "/warranty-policy.html", "destination": "/warranty-policy", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), geolocation=(), microphone=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ]
+}
